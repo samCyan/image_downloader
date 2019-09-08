@@ -30,7 +30,7 @@ fetchimages.fromFile(source).saveTo(dest)
 ```
 python -m unittest discover .  
 or  
-python -m unittest discover -s <directory> -p '*_test.py'  
+python -m unittest discover -s <directory> -p '*_tests.py'  
 ```
 
 **Future book of work-**  
