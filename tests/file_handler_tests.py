@@ -40,16 +40,16 @@ class FileHandlerTest(unittest.TestCase):
         with patch("builtins.open", m, create=True) as mock_file:
             with patch('os.path.isdir') as dir_mock:
                 dir_mock.return_value = lambda x: True
-                FileHandler.saveAnyDataTo("test data", self.path1)
-                m.assert_called_with(self.path1, 'wb+')
+                FileHandler.saveAnyDataTo("test data", 'abc/images.jpg')
+                m.assert_called_with('abc/images.jpg', 'wb+')
 
     def test_saveDataTo(self):
         m = mock_open()
         with patch("builtins.open", m, create=True) as mock_file:
             with patch('os.path.isdir') as dir_mock:
                 dir_mock.return_value = lambda x: True
-                self.sut.saveDataTo(self.path1)
-                m.assert_called_with(self.path1, 'wb+')
+                self.sut.saveDataTo('abc/images.jpg')
+                m.assert_called_with('abc/images.jpg', 'wb+')
 
     def test_getFileAsList(self):
         self.sut.data = 'abc\ndef'
