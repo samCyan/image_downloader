@@ -10,7 +10,6 @@ class FileHandler(object):
 
     '''returns the file content according to the param file type'''
     def __funnelFileFormat(self, file):
-
         return self.readFile(file) if isinstance(file, str) else file.read() if hasattr(file, 'read') else None
 
     def readFile(self, file):

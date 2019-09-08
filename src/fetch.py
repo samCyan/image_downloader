@@ -28,7 +28,6 @@ class FetchImages(object):
             _, fileName = self.reqHandler.breakURL(url)
             image = self.reqHandler.fetchAll(url)
             return image, fileName
-        logging.error('invalid url - {}'.format(url))
         return (None, None)
 
     def fromUrls(self, urls):
