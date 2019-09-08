@@ -4,12 +4,10 @@ from src.request_handler import RequestHandler
 from src.file_handler import FileHandler
 
 
-class Fetch(object):
-    def __init__(self):
-        pass
-
-
-class FetchImages(Fetch):
+class FetchImages(object):
+    '''
+    FetchImages provides functionalities for interacting with image urls and downloading them
+    '''
     def __init__(self, reqHandler=None):
         super(FetchImages, self).__init__()
         self.urls = []
