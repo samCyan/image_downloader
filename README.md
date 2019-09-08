@@ -35,11 +35,11 @@ python -m unittest discover -s <directory> -p '*_test.py'
 
 **Future book of work-**  
 add more functionalities for multi thread/ process support  
--support byte range header in requests  
--support seeking files to a position  
+   -support byte range header in requests  
+   -support seeking files to a position  
 add feature for handling same file download  
 streamline handlers  
--let one interface hold contracts for functionalities  
+   -let one interface hold contracts for functionalities  
 make it compatible with Redis Queue and workers architecture  
 dockerize the whole thing  
 
