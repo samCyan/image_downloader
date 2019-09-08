@@ -1,0 +1,22 @@
+*.py[co]
+*.DS_*
+# Packages
+*.egg
+*.egg-info
+dist
+build
+eggs
+parts
+bin
+var
+sdist
+develop-eggs
+__pycache__
+.installed.cfg
+.idea
+.git
+venv
+*.pyc
+downloads
+images
+tests/.pytest_cache
