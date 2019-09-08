@@ -1,20 +1,26 @@
+import logging
 import re
+
 import requests
 
+logger = logging.getLogger(__file__)
 
+'''RequestHandler has a bunch of capabilities to help out with downloading files'''
 class RequestHandler(object):
-    '''
-    RequestHandler has a bunch of capabilities to help out with downloading files
-    '''
     def __init__(self):
         pass
 
     def checkURL(self, url):
         # regex for verifying url's validity
         if not re.match('(www.)|((http)(s?)([:])//)', url):
+            logging.error('INVALID url - {}'.format(url))
             return False
-        request = requests.get(url)
-        return True if request.status_code == 200 else False
+        try:
+            r = requests.head(url)
+            return True if r.status_code == 200 else False
+        except(requests.exceptions.RequestException):
+            logging.error('INVALID url - {}'.format(url))
+            return False
 
     def fetchAll(self, url):
         return requests.get(url, stream=True)

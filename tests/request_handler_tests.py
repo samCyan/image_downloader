@@ -16,7 +16,7 @@ class FileHandlerTest(unittest.TestCase):
         testUrl = "http://abc.com"
         m = Mock()
         m.status_code = 200
-        with patch('requests.get', Mock(return_value=m)) as p:
+        with patch('requests.head', Mock(return_value=m)) as p:
             assert self.sut.checkURL(testUrl) == True
 
     def test_fetchAll(self):
